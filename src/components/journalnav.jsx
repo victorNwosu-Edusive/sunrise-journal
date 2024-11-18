@@ -30,10 +30,7 @@ function Journalnav(){
 
         {/*the desktop navigation */}
         <nav className="h-screen fixed z-20 hidden md:hidden lg:w-1/3 bg-orange-900 p-4 lg:flex flex-col">
-         <button className='text-white hidden md:block lg:block focus:outline-none relative w-6 h-6 left-[90%]'>
-            <span className='block absolute w-6 h-0.5 rotate-45 bg-white -translate-y-1.5'></span>
-            <span className='block absolute w-6 h-0.5 -rotate-45 bg-white -translate-y-1.5'></span>
-         </button>
+         
          <div className='flex flex-col gap-5'>
          <div className='flex'>
          <img src={logo} alt="" className='h-11 w-11'  />
@@ -60,7 +57,7 @@ function Journalnav(){
         </nav>
 
         {/*the mobile menu*/}
-        <nav className="h-screen fixed z-40 w-auto md:w-auto md:flex lg:hidden bg-orange-900 p-4 flex flex-col">
+        <nav className="h-screen fixed z-40 w-auto md:w-auto overflow-y-auto md:flex lg:hidden bg-orange-900 p-4 flex flex-col">
          <div className='mb-6 md:mb-6 '>
          <button className='text-white block md:block lg:hidden focus:outline-none relative w-6 h-6' onClick={toggleMenu}>
             <span className='block absolute w-6 h-0.5 bg-white -translate-y-1.5'></span>
@@ -94,7 +91,7 @@ function Journalnav(){
         {/*the mobile menu extended: on-click*/}
         <nav className={`${
           isOpen ? "left-0" : "-left-full"
-        } h-screen fixed z-50 w-auto md:w-auto md:flex lg:left-0 lg:hidden duration-300 bg-orange-900 p-4 flex flex-col `}>
+        } h-screen fixed z-50 w-auto md:w-auto md:flex lg:left-0 lg:hidden duration-300 overflow-y-auto bg-orange-900 p-4 flex flex-col `}>
          <div className='mb-6 md:mb-6 '>
          <button className='text-white md:block lg:block focus:outline-none relative w-6 h-6 left-[90%]' onClick={closeMenu}>
             <span className='block absolute w-6 h-0.5 rotate-45 bg-white -translate-y-1.5'></span>
