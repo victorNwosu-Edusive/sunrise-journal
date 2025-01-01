@@ -1,5 +1,4 @@
 import React from 'react';
-import load from '../assets/images/loading-screen.gif'
 import logo from '../assets/images/sun-favicon.png'
 
 const Loading = () => {

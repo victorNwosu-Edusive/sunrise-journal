@@ -41,10 +41,10 @@ function Journalnav(){
 
          
 
-            <NavLink to="/new-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center "> <FontAwesomeIcon icon={faPlus} className='text-amber-600'  /> Add New Journal</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center  "><FontAwesomeIcon icon={faBookmark} className='text-amber-600' /> Saved Journals</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center "><FontAwesomeIcon icon={faHeart} className='text-amber-600' /> Favourite Journals</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 mb-11 items-center  "><FontAwesomeIcon icon={faArchive} className='text-amber-600' /> Archived</NavLink>
+            <NavLink to="/new-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center "> <FontAwesomeIcon icon={faPlus} className='text-amber-600 text-xl'  /> Add New Journal</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center  "><FontAwesomeIcon icon={faBookmark} className='text-amber-600 text-xl' /> Saved Journals</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center "><FontAwesomeIcon icon={faHeart} className='text-amber-600 text-xl' /> Favourite Journals</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center  "><FontAwesomeIcon icon={faArchive} className='text-amber-600 text-xl' /> Archived</NavLink>
             <NavLink onClick={toggleModal} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center"> Login to save</NavLink>
             
             {isModalOpen && <Loginmodal onClose={toggleModal} />}
@@ -88,10 +88,10 @@ function Journalnav(){
          <p className='text-sm font-bold text-orange-950 leading-3 pt-2 mb-9'>Sunrise <br />Journal</p>
          </div>
 
-            <NavLink to="/new-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center " onClick={closeMenu}> <FontAwesomeIcon icon={faPlus} className='text-amber-600'  /> Add New Journal</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center  " onClick={closeMenu}><FontAwesomeIcon icon={faBookmark} className='text-amber-600' /> Saved Journals</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 items-center " onClick={closeMenu}><FontAwesomeIcon icon={faHeart} className='text-amber-600' /> Favourite Journals</NavLink>
-            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-bold w-full flex gap-4 mb-11 items-center  " onClick={closeMenu}><FontAwesomeIcon icon={faArchive} className='text-amber-600' /> Archived</NavLink>
+            <NavLink to="/new-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center " onClick={closeMenu}> <FontAwesomeIcon icon={faPlus} className='text-amber-600 text-xl'  /> Add New Journal</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center  " onClick={closeMenu}><FontAwesomeIcon icon={faBookmark} className='text-amber-600 text-xl' /> Saved Journals</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center " onClick={closeMenu}><FontAwesomeIcon icon={faHeart} className='text-amber-600 text-xl' /> Favourite Journals</NavLink>
+            <NavLink to="" className="text-orange-950  hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center  " onClick={closeMenu}><FontAwesomeIcon icon={faArchive} className='text-amber-600 text-xl' /> Archived</NavLink>
             <NavLink onClick={toggleModal} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center"> Login to save</NavLink>
             
             {isModalOpen && <Loginmodal onClose={toggleModal} />}
