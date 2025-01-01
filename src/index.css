@@ -3,12 +3,82 @@
 @tailwind utilities;
 
 
+/* Regular */
 @font-face {
-    font-family: 'HostGrotesk';
-    src: url(../src/assets/fonts/Host_Grotesk/static/HostGrotesk-Regular.ttf);
-  }
-  
-  @font-face {
-    font-family: 'HostGroteskBold';
-    src: url(../src/assets/fonts/Host_Grotesk/static/HostGrotesk-Bold.ttf);
-  }
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium Italic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Extra Bold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Extra Bold Italic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}

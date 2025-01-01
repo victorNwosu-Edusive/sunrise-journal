@@ -22,35 +22,35 @@ function Addjournal() {
 
     return (
         <motion.div
-            className="h-lvh w-full pl-[5rem] lg:pl-[28rem] rounded-xl bg-amber-950 p-4 text-white"
+            className="h-auto md:h-auto lg:h-auto w-full md:w-full lg:w-4/5 ml-auto pt-16"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
         >
             <div
-                className="flex flex-col gap-2 *:w-full"
+                className="flex flex-col gap-2 bg-white rounded-md p-7 md:p-14 lg:p-14"
             >
                 <motion.input
                     type="date"
-                    className="bg-orange-800/25 outline-none p-3"
+                    className="bg-slate-200/25 outline-none p-3 w-full"
                     variants={childVariants}
                 />
                 <motion.textarea
                     name=""
                     id=""
-                    className="bg-orange-800/25 rounded-md outline-none p-3 text-xl h-auto"
+                    className="bg-slate-200/25 rounded-md outline-none p-3 text-xl h-auto w-full"
                     placeholder="Title"
                     variants={childVariants}
                 ></motion.textarea>
                 <motion.textarea
                     name=""
                     id=""
-                    className="flex h-80 bg-orange-800/25 rounded-md outline-none p-3"
+                    className="flex h-80 bg-slate-200/25 rounded-md outline-none p-3 w-full"
                     placeholder="Write about your day, ideas, or dreams..."
                     variants={childVariants}
                 ></motion.textarea>
                 <motion.button
-                    className="font-groteskbold text-center bg-orange-600/15 hover:bg-orange-600/45 shadow-inner shadow-orange-400/40 hover:shadow-orange-400/60 duration-300 text-sm rounded-md p-2 w-full text-white"
+                    className="text-white w-2/5 md:1/5 lg:1/5 text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold justify-center"
                     
                 >
                     Save Journal

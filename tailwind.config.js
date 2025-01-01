@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     fontFamily:{
-      groteskbold:['HostGroteskBold'],
+      global:['Poppins'],
     },
     extend: {},
   },
