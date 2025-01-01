@@ -22,7 +22,7 @@ function Addjournal() {
 
     return (
         <motion.div
-            className="h-auto md:h-auto lg:h-auto w-full md:w-full lg:w-4/5 ml-auto pt-16"
+            className="h-auto md:h-auto lg:h-auto w-full md:w-full lg:w-4/5 ml-auto pt-16 md:pt-0 lg:pt-0"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
