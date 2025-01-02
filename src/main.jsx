@@ -10,7 +10,9 @@ import ErrorPage from "./errorpage.jsx";
 import Journalnav from "./components/journalnav.jsx";
 import Journalscreen from "./components/journalscreen.jsx";
 import Addjournal from "./components/addjournal.jsx";
+import Journalsave from "./components/savedJournal.jsx";
 import Loading from "./components/loading"; // Import the Loading component
+
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "new-journal",
         element: <Addjournal />,
+      },
+      {
+        path: "saved-journal",
+        element: <Journalsave />,
       },
     ]
   },
