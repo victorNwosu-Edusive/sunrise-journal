@@ -75,7 +75,7 @@ function Journalnav() {
                             </NavLink>
 
                             {/* Show user name and logout button */}
-                            <span className="text-orange-950 font-medium text-sm">{user.displayName || user.username}</span>
+                            <span className="text-orange-950 font-medium text-sm">{user.displayName || user.email}</span>
                             <NavLink onClick={handleLogout} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center">
                                 Logout
                             </NavLink>
