@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { faXmarkCircle } from '@fortawesome/free-regular-svg-icons';
 import { auth } from "../firebase";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase"; // Firestore instance
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
@@ -44,7 +44,7 @@ function Loginmodal({ onClose }) {
                 setSnackbarMessage("Sign up successful!");
                 setSnackbarSeverity("success");
                 setSnackbarOpen(true);
-                
+    
                 // Delay the navigation to allow Snackbar to show
                 setTimeout(() => {
                     navigate("/saved-journal");
@@ -52,17 +52,11 @@ function Loginmodal({ onClose }) {
                 }, 2000); // 2 seconds delay
             } else {
                 // Handle Login
-                const usersSnapshot = await getDoc(doc(db, "usernames", username));
-                if (!usersSnapshot.exists()) {
-                    throw new Error("Username not found");
-                }
-                const userEmail = usersSnapshot.data().email;
-    
-                await signInWithEmailAndPassword(auth, userEmail, password);
+                await signInWithEmailAndPassword(auth, email, password);
                 setSnackbarMessage("Login successful!");
                 setSnackbarSeverity("success");
                 setSnackbarOpen(true);
-                
+    
                 // Delay the navigation to allow Snackbar to show
                 setTimeout(() => {
                     navigate("/saved-journal");
@@ -82,7 +76,6 @@ function Loginmodal({ onClose }) {
         }
     };
     
-
     return (
         <div
             className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-orange-600/25 z-50"
@@ -103,6 +96,7 @@ function Loginmodal({ onClose }) {
                     onClose={() => setSnackbarOpen(false)}
                     severity={snackbarSeverity}
                     sx={{ width: '100%' }}
+                    className="font-['Poppins'] "
                 >
                     {snackbarMessage}
                 </Alert>
@@ -118,32 +112,34 @@ function Loginmodal({ onClose }) {
                 {isSignUp ? "Sign Up" : "Login"}
             </h2>
             <form onSubmit={handleAuth}>
+                <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full p-2 border-none bg-slate-200/50 border-[1px] duration-300 rounded-md outline-none focus:ring-2 focus:ring-orange-100 text-sm"
+                        required
+                    />
+                </div>
+
                 {isSignUp && (
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-700">
-                            Email
+                            Username
                         </label>
                         <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             className="w-full p-2 border-none bg-slate-200/50 border-[1px] duration-300 rounded-md outline-none focus:ring-2 focus:ring-orange-100 text-sm"
                             required
                         />
                     </div>
                 )}
-                <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">
-                        Username
-                    </label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        className="w-full p-2 border-none bg-slate-200/50 border-[1px] duration-300 rounded-md outline-none focus:ring-2 focus:ring-orange-100 text-sm"
-                        required
-                    />
-                </div>
+
                 <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700">
                         Password
