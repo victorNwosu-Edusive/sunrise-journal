@@ -65,17 +65,17 @@ function Journalnav(){
          <button className='text-white block md:block lg:hidden focus:outline-none relative scale-x-[-1] w-6 h-6' onClick={toggleMenu}>
                <span
                 className={`block absolute w-6 h-0.5 bg-orange-950 transition-transform duration-300 -translate-y-1.5 ${
-                  isOpen ? 'bg-orange-950 transition-all' : '-translate-y-1.5'
+                  isOpen ? 'bg-orange-950 transition-all' : '-translate-y-1.5 duration-300'
                 }`}
               ></span>
               <span
                 className={`block absolute w-4 h-0.5 bg-orange-950 transition-transform duration-300 ${
-                  isOpen ? 'bg-orange-950 transition-all' : 'w-7 transition-all'
+                  isOpen ? 'bg-orange-950 transition-all' : 'w-7 transition-all duration-300'
                 }`}
               ></span>
               <span
                 className={`block absolute w-6 h-0.5 bg-black transition-transform duration-300 translate-y-1.5 ${
-                  isOpen ? 'bg-orange-950 transition-all' : 'translate-y-1.5'
+                  isOpen ? 'bg-orange-950 transition-all' : 'translate-y-1.5 duration-300'
                 }`}
               ></span>
          </button>
