@@ -4,11 +4,56 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faPlus, faRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Snackbar} from '@mui/material';
+import { faEdit, faFileArchive, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
+
 
 function savedJournal() {
     const [journals, setJournals] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+
+  // Delete confirmation dialog
+  const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
+  const [journalToDelete, setJournalToDelete] = useState(null);
+
+  const handleDelete = (id) => {
+    setOpenConfirmDelete(true);
+    setJournalToDelete(id);
+  };
+
+  const confirmDelete = () => {
+    // Delete the journal
+    setSavedJournals((prevJournals) =>
+      prevJournals.filter((journal) => journal.id !== journalToDelete)
+    );
+
+    // Show Snackbar with success message
+    setSnackbarMessage('Journal deleted');
+    setOpenSnackbar(true);
+
+    // Close the confirmation dialog
+    setOpenConfirmDelete(false);
+    setJournalToDelete(null);
+  };
+
+  const cancelDelete = () => {
+    setOpenConfirmDelete(false);
+    setJournalToDelete(null);
+  };
+
+  const handleSnackbarClose = () => {
+    setOpenSnackbar(false);
+  };
+
+
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
+      };
 
     useEffect(() => {
         const fetchJournals = async () => {
@@ -65,28 +110,51 @@ function savedJournal() {
                             <p>No saved journals yet.</p>
                             <button
                                 onClick={handleAddJournal}
-                                className="mt-4 border-solid border-[2px] border-orange-600/50 text-orange-600/50 text-sm text-white p-1 px-6 rounded-md"
+                                className="mt-4 border-solid border-[2px] border-orange-600/50 text-orange-600/50 text-sm p-1 px-6 rounded-md"
                             >
                                 <FontAwesomeIcon icon={faPlus}  /> Add New Journal
                             </button>
                         </div>
                     ) : (
                         <div>
-                            <h2 className="text-xl font-bold mb-4">Your Saved Journals</h2>
+                            <h2 className="text-xl font-medium mb-1">Your Saved Journals</h2>
+                            <button
+                                onClick={handleAddJournal}
+                                className="my-4 border-solid border-[2px] border-orange-600/50 text-orange-600/50 font-medium text-[11px] p-1 px-4 rounded-md"
+                            >
+                                <FontAwesomeIcon icon={faPlus}  /> Add New Journal
+                            </button>
                             <ul>
                                 {journals.map((journal, index) => (
-                                    <li key={index} className="mb-4">
-                                        <div className="p-4 border-b border-gray-300 rounded-md">
-                                            <p>{journal.title}</p>
-                                            <p>{journal.content}</p>
+                                    <li key={index} className="mb-4 cursor-pointer">
+                                        <div className="p-4 bg-orange-100 rounded-md">
+                                        <p className='p-1 ml-auto flex px-2 rounded-xl  w-fit font-bold text-[10px] text-orange-300 border-orange-300 border-[2px] bg-orange-200/40'>{formatDate(journal.date)}</p>
+                                            <p className='font-bold mb-1'>{journal.title}</p>
+                                            <p className='text-[14px]'>{journal.content}</p>
+                                            <div className="mt-3 flex gap-2 items-end justify-end">
+                                            <FontAwesomeIcon icon={faEdit} className='flex text-white bg-orange-300 p-2 rounded-md' />
+                                            <FontAwesomeIcon icon={faBoxArchive} className='flex text-white bg-orange-300 p-2 rounded-md' />
+                                            </div>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
+
+                            
                         </div>
+
+                        
                     )}
                 </>
+                
             )}
+
+        <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+        message={snackbarMessage}
+      />
         </div>
     );
 }

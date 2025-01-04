@@ -98,10 +98,10 @@ function Journalnav() {
                 </div>
 
                 <div>
-                    <button className="text-white block md:block lg:hidden focus:outline-none relative scale-x-[-1] w-6 h-6" onClick={toggleMenu}>
-                        <span className={`block absolute w-6 h-0.5 bg-orange-950 transition-transform duration-300 -translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : '-translate-y-1.5 duration-300'}`}></span>
-                        <span className={`block absolute w-4 h-0.5 bg-orange-950 transition-transform duration-300 ${isOpen ? 'bg-orange-950 transition-all' : 'w-7 transition-all duration-300'}`}></span>
-                        <span className={`block absolute w-6 h-0.5 bg-black transition-transform duration-300 translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : 'translate-y-1.5 duration-300'}`}></span>
+                    <button className="text-white block md:block lg:hidden duration-300 focus:outline-none relative scale-x-[-1] w-6 h-6" onClick={toggleMenu}>
+                        <span className={`block absolute w-6 h-0.5 bg-orange-950 transition-all duration-300 -translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : '-translate-y-1.5'}`}></span>
+                        <span className={`block absolute w-4 h-0.5 bg-orange-950 duration-300 ${isOpen ? 'bg-orange-950 transition-all' : 'w-7 transition-transform'}`}></span>
+                        <span className={`block absolute w-6 h-0.5 bg-black transition-all duration-300 translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : 'translate-y-1.5'}`}></span>
                     </button>
                 </div>
             </nav>
@@ -140,7 +140,7 @@ function Journalnav() {
                             </NavLink>
                         </>
                     ) : (
-                        <NavLink onClick={toggleModal} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 px-12 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center">
+                        <NavLink onClick={toggleModal} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 px-10 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center">
                             Login to save
                         </NavLink>
                     )}
