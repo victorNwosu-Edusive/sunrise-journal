@@ -12,6 +12,7 @@ import Journalscreen from "./components/journalscreen.jsx";
 import Addjournal from "./components/addjournal.jsx";
 import Journalsave from "./components/savedJournal.jsx";
 import Loading from "./components/loading"; // Import the Loading component
+import ArchivedJournals from "./components/archivedJournal.jsx";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "saved-journal",
         element: <Journalsave />,
+      },
+      {
+        path: "archived-journal",
+        element: <ArchivedJournals />,
       },
     ]
   },

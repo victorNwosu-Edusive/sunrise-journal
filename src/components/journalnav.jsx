@@ -70,7 +70,7 @@ function Journalnav() {
                             <NavLink to="" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center">
                                 <FontAwesomeIcon icon={faHeart} className="text-amber-600 text-xl" /> Favourite Journals
                             </NavLink>
-                            <NavLink to="" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center">
+                            <NavLink to="/archived-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center">
                                 <FontAwesomeIcon icon={faArchive} className="text-amber-600 text-xl" /> Archived
                             </NavLink>
 
@@ -132,7 +132,7 @@ function Journalnav() {
                             <NavLink to="" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 items-center" onClick={closeMenu}>
                                 <FontAwesomeIcon icon={faHeart} className="text-amber-600 text-xl" /> Favourite Journals
                             </NavLink>
-                            <NavLink to="" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center" onClick={closeMenu}>
+                            <NavLink to="/archived-journal" className="text-orange-950 hover:bg-orange-600/45 hover:shadow-orange-400/60 p-2 duration-300 text-[13px] rounded-md font-medium w-full flex gap-4 mb-11 items-center" onClick={closeMenu}>
                                 <FontAwesomeIcon icon={faArchive} className="text-amber-600 text-xl" /> Archived
                             </NavLink>
                             <NavLink onClick={handleLogout} className="text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center">

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { db, auth } from "../firebase"; // Firestore and auth instance
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, getDocs, doc, deleteDoc, addDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faPlus, faRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Snackbar} from '@mui/material';
+import { CircularProgress, Snackbar } from "@mui/material";
 import { faEdit, faFileArchive, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
 
@@ -13,41 +13,8 @@ function savedJournal() {
     const [journals, setJournals] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-    const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
-
-  // Delete confirmation dialog
-  const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
-  const [journalToDelete, setJournalToDelete] = useState(null);
-
-  const handleDelete = (id) => {
-    setOpenConfirmDelete(true);
-    setJournalToDelete(id);
-  };
-
-  const confirmDelete = () => {
-    // Delete the journal
-    setSavedJournals((prevJournals) =>
-      prevJournals.filter((journal) => journal.id !== journalToDelete)
-    );
-
-    // Show Snackbar with success message
-    setSnackbarMessage('Journal deleted');
-    setOpenSnackbar(true);
-
-    // Close the confirmation dialog
-    setOpenConfirmDelete(false);
-    setJournalToDelete(null);
-  };
-
-  const cancelDelete = () => {
-    setOpenConfirmDelete(false);
-    setJournalToDelete(null);
-  };
-
-  const handleSnackbarClose = () => {
-    setOpenSnackbar(false);
-  };
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
 
 
     const formatDate = (dateString) => {
@@ -55,7 +22,7 @@ function savedJournal() {
         return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
       };
 
-    useEffect(() => {
+      useEffect(() => {
         const fetchJournals = async () => {
             const user = auth.currentUser;
 
@@ -65,7 +32,10 @@ function savedJournal() {
                 const querySnapshot = await getDocs(q);
 
                 if (!querySnapshot.empty) {
-                    const fetchedJournals = querySnapshot.docs.map(doc => doc.data());
+                    const fetchedJournals = querySnapshot.docs.map(doc => ({
+                        id: doc.id, // Include the document ID
+                        ...doc.data()
+                    }));
                     setJournals(fetchedJournals);
                 } else {
                     setJournals([]);
@@ -80,6 +50,37 @@ function savedJournal() {
     const handleAddJournal = () => {
         navigate("/new-journal"); // Navigate to the page where the user can add a new journal
     };
+
+    const handleArchive = async (journalId) => {
+        try {
+            const user = auth.currentUser;
+            if (!user) throw new Error("User not authenticated");
+
+            // Find the journal to archive
+            const journalToArchive = journals.find((journal) => journal.id === journalId);
+
+            if (!journalToArchive) throw new Error("Journal not found");
+
+            // Add the journal to the archived collection
+            await addDoc(collection(db, "users", user.uid, "archivedJournals"), journalToArchive);
+
+            // Remove the journal from the saved journals collection
+            await deleteDoc(doc(db, "users", user.uid, "journals", journalId));
+
+            // Update local state
+            setJournals((prev) => prev.filter((journal) => journal.id !== journalId));
+
+            // Show snackbar notification
+            setSnackbarMessage("Journal archived successfully");
+            setSnackbarOpen(true);
+        } catch (error) {
+            console.error("Error archiving journal:", error);
+            setSnackbarMessage("Failed to archive journal");
+            setSnackbarOpen(true);
+        }
+    };
+
+    const handleSnackbarClose = () => setSnackbarOpen(false);
 
     return (
         <div className="h-auto w-full md:w-full lg:w-4/5 ml-auto p-9 pt-24 md:pt-16 lg:pt-16">
@@ -132,8 +133,8 @@ function savedJournal() {
                                             <p className='font-bold mb-1'>{journal.title}</p>
                                             <p className='text-[14px]'>{journal.content}</p>
                                             <div className="mt-3 flex gap-2 items-end justify-end">
-                                            <FontAwesomeIcon icon={faEdit} className='flex text-white bg-orange-300 p-2 rounded-md' />
-                                            <FontAwesomeIcon icon={faBoxArchive} className='flex text-white bg-orange-300 p-2 rounded-md' />
+                                            <FontAwesomeIcon icon={faEdit} className='flex text-white bg-orange-300 p-2 rounded-md hover:bg-black duration-300' />
+                                            <FontAwesomeIcon icon={faBoxArchive} onClick={() => handleArchive(journal.id)} className='flex text-white bg-orange-300 p-2 rounded-md hover:bg-black duration-300' />
                                             </div>
                                         </div>
                                     </li>
@@ -149,12 +150,14 @@ function savedJournal() {
                 
             )}
 
-        <Snackbar
-        open={openSnackbar}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-        message={snackbarMessage}
-      />
+                <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={handleSnackbarClose}
+                message={snackbarMessage}
+            />
+
+        
         </div>
     );
 }
