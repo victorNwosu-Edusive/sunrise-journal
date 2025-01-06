@@ -4,7 +4,7 @@ import { collection, query, getDocs, doc, deleteDoc, addDoc } from 'firebase/fir
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faPlus, faRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { CircularProgress, Snackbar } from "@mui/material";
+import { Snackbar } from "@mui/material";
 import { faEdit, faFileArchive, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
 
