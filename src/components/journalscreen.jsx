@@ -18,8 +18,9 @@ function Journalscreen(){
         <>
        
         <div className="h-screen md:h-screen lg:h-screen w-full md:w-full lg:w-4/5 ml-auto">
-        <div className=' p-9 bg-orange-100/25 pb-24'>
-         <h1 className='font-bold text-orange-950 text-2xl md:text-4xl lg:text-4xl mt-16 md:mt-9 lg:mt-9 mb-5'>Welcome to Sunrise Journal👋</h1>
+        <div className=' p-9 bg-white pb-24'>
+        <h1 className='font-bold text-orange-950 text-[20px] mt-16 md:mt-9 lg:mt-9'>Welcome to</h1>
+         <h1 className='font-bold text-orange-950 text-2xl md:text-4xl lg:text-4xl mb-5'>Sunrise Journal👋</h1>
          <h1 className='text-[14px] md:text-[15px] lg:text-[15px] text-slate-600'>Sunrise Journal is a sleek and intuitive journaling app designed to help you capture your thoughts, 
             ideas, and memories effortlessly. With its elegant design and user-friendly interface, Sunrise Journal 
             makes it easy to log daily reflections, set goals, and track your personal growth. Start your day with 
