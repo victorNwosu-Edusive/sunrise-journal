@@ -31,11 +31,11 @@ function Journalscreen(){
             makes it easy to log daily reflections, set goals, and track your personal growth. Start your day with 
             clarity and end it with gratitude</h1>
         </div>
-        <div className='rounded-xl p-7 m-6 md:m-16 lg:m-16 -mt-32 md:-mt-32 lg:-mt-40 shadow-sm flex z-10 flex-col items-center justify-center'>
+        <div className='rounded-xl p-5 m-6 md:m-16 lg:m-16 -mt-32 md:-mt-32 lg:-mt-40 shadow-sm flex z-10 flex-col items-center justify-center'>
             <img src={heroImage} alt="" className=' mb-5 h-40 w-auto flex items-center justify-center' />
         <div className='flex gap-3'>
-        <NavLink onClick={toggleModal} className="text-white text-[12px] md:text-sm lg:text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 px-4 font-medium duration-300 rounded-md items-center justify-center"> Sign in</NavLink>
-        <NavLink onClick={toggleModal} className="text-slate-600 text-[12px] md:text-sm lg:text-sm bg-slate-200 p-2 px-4 font-medium hover:bg-slate-300 duration-300 rounded-md items-center justify-center"> Sign up</NavLink>
+        <NavLink onClick={toggleModal} className="text-white text-[12px] md:text-sm lg:text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 px-6 md:px-10 lg:px-10 font-medium duration-300 rounded-md items-center justify-center"> Sign in</NavLink>
+        <NavLink onClick={toggleModal} className="text-slate-600 text-[12px] md:text-sm lg:text-sm bg-slate-200 p-2 px-6 md:px-10 lg:px-10 font-medium hover:bg-slate-300 duration-300 rounded-md items-center justify-center"> Sign up</NavLink>
         </div>    
             {isModalOpen && <Loginmodal onClose={toggleModal} />}
 
