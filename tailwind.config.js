@@ -8,7 +8,11 @@ export default {
     fontFamily:{
       global:['Poppins'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('../src/assets/images/journaling-examples.jpg')",
+      }
+    },
   },
   plugins: [],
 }
