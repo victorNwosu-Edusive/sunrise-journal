@@ -69,6 +69,10 @@ const ArchivedJournals = () => {
     fetchArchivedJournals();
   }, []);
 
+  useEffect(() => {
+          document.title = 'Archived Journals';
+      }, [])
+
   if (loading) {
     return (
       <div className="h-auto w-full flex justify-center p-9 pt-24 md:pt-16 lg:pt-16 items-center">

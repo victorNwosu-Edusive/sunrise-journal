@@ -82,6 +82,10 @@ function savedJournal() {
 
     const handleSnackbarClose = () => setSnackbarOpen(false);
 
+    useEffect(() => {
+            document.title = 'Saved Journals';
+        }, [])
+
     return (
         <div className="h-auto w-full md:w-full lg:w-4/5 ml-auto p-9 pt-24 md:pt-16 lg:pt-16">
             {loading ? (

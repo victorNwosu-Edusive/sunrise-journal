@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { db, auth } from "../firebase"; // Firebase Firestore and Auth instance
 import { collection, addDoc } from "firebase/firestore"; // Firestore methods
@@ -76,6 +76,10 @@ function Addjournal() {
             setLoading(false); // Stop loading
         }
     };
+
+    useEffect(() => {
+        document.title = 'New Journal';
+    }, [])
 
     return (
         <motion.div
