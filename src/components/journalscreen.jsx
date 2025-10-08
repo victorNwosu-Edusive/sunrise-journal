@@ -96,7 +96,7 @@ const words = [
             <div className='relative bg-orange-50/75 items-center justify-center border-[1px] border-slate-100 p-6 rounded-xl backdrop-blur-md '>
              <img src={Think} className='w-auto h-24 m-auto' alt="Why Journal" />
 
-            <p className='text-sm text-center mt-2 font-bold'>Gain Mental Clarity</p>
+            <p className='text-[12px] text-center text-orange-900 mt-2 font-bold'>Gain Mental Clarity</p>
           </div>
           </div>
 
@@ -106,7 +106,7 @@ const words = [
           <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={productive} className='w-auto h-24 m-auto' alt="Why Journal" />
 
-            <p className='text-sm text-center mt-2 font-bold'>Boosts Productivity</p>
+            <p className='text-[12px] text-center text-orange-900 mt-2 font-bold'>Boosts Productivity</p>
           </div>
           </div>
 
@@ -116,7 +116,7 @@ const words = [
           <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={track} className='w-auto h-24 m-auto' alt="Why Journal" />
 
-            <p className='text-sm text-center mt-2 font-bold'>Track emotional growth.</p>
+            <p className='text-[12px] text-center text-orange-900 mt-2 font-bold'>Track emotional growth.</p>
           </div>
           </div>
 
@@ -126,7 +126,7 @@ const words = [
           <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={documenting} className='w-auto h-24 m-auto' alt="Why Journal" />
 
-            <p className='text-sm text-center mt-2 font-bold'>Preserve your memories.</p>
+            <p className='text-[12px] text-orange-900 text-center mt-2 font-bold'>Preserve your memories.</p>
           </div>
           </div>
 
