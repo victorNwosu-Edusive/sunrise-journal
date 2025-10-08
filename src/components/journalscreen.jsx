@@ -87,35 +87,47 @@ const words = [
          </div>
 
          <div className='rounded-2xl lg:h-screen md:h-auto w-screen p-7 pt-20 lg:pt-20 lg:p-10'>
-          <p className='font-global lg:text-center md:text-center lg:text-5xl mb-7 md:text-4xl text-4xl text-orange-950'>Why Journal?</p>
-          <div className='grid lg:grid-cols-4 md:grid-cols-1 gap-9 '>
+          <p className='font-global text-center lg:text-5xl mb-7 md:text-4xl text-4xl text-orange-950'>Why Journal?</p>
+          <div className='grid lg:grid-cols-4 md:grid-cols-1 gap-9 p-16 '>
 
             <div>
                <div className='bg-orange-300 p-11 absolute rounded-full'></div>
-            
-            <div className='relative bg-slate-50/70 items-center justify-center border-[1px] border-slate-100 p-6 rounded-xl backdrop-blur-md '>
+                           
+            <div className='relative bg-orange-50/75 items-center justify-center border-[1px] border-slate-100 p-6 rounded-xl backdrop-blur-md '>
              <img src={Think} className='w-auto h-24 m-auto' alt="Why Journal" />
 
             <p className='text-sm text-center mt-2 font-bold'>Gain Mental Clarity</p>
           </div>
           </div>
 
-          <div className='flex-row bg-slate-50 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
+          <div>
+               <div className='bg-orange-300 p-11 absolute rounded-full'></div>
+
+          <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={productive} className='w-auto h-24 m-auto' alt="Why Journal" />
 
             <p className='text-sm text-center mt-2 font-bold'>Boosts Productivity</p>
           </div>
+          </div>
 
-          <div className='flex-row bg-slate-50 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
+          <div>
+               <div className='bg-orange-300 p-11 absolute rounded-full'></div>
+
+          <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={track} className='w-auto h-24 m-auto' alt="Why Journal" />
 
             <p className='text-sm text-center mt-2 font-bold'>Track emotional growth.</p>
           </div>
+          </div>
 
-          <div className='flex-row bg-slate-50 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
+          <div>
+               <div className='bg-orange-300 border-[1px] border-slate-100 p-11 absolute rounded-full'></div>
+
+          <div className='flex-row border-[1px] border-slate-100 bg-orange-50/75 items-center justify-center p-6 rounded-xl backdrop-blur-md '>
             <img src={documenting} className='w-auto h-24 m-auto' alt="Why Journal" />
 
             <p className='text-sm text-center mt-2 font-bold'>Preserve your memories.</p>
+          </div>
           </div>
 
           </div>
