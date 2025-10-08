@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import heroImage from '../assets/images/journal-image.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loginmodal from './loginmodal';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/sun-favicon.png';
+import { faArrowRight, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCaretDown } from '@fortawesome/free-solid-svg-icons/faSquareCaretDown';
 
 
 function Journalscreen(){
+
+const words = [
+    "Productivity.",
+    "Self-Discovery.",
+    "Peace of Mind.",
+    "Clarity.",
+    "Growth.",
+    "Happiness.",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 2000); // changes every 2 seconds
+    return () => clearInterval(interval);
+  }, [words.length]);
+
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,6 +41,7 @@ function Journalscreen(){
 
     return(
         <>
+        {/*
         <div className='grid md:grid-cols-3 lg:grid-cols-3'>
         <div className='bg-hero-pattern p-2 px-7 md:px-10 lg:px-10 font-medium text-white bg-cover bg-center h-40 md:h-[100%] lg:h-[100%]'></div>
         <div className="md:col-span-2 lg:col-span-2 ml-auto">
@@ -45,6 +67,19 @@ function Journalscreen(){
 
         </div>
          </div>
+         </div>
+         */}
+
+         <div className='rounded-2xl m-2 lg:m-5 h-auto lg:h-screen w-screen bg-hero-pattern bg-orange-700/40 bg-blend-overlay bg-cover bg-no-repeat bg-center pt-72 lg:pt-44 p-7 lg:p-10'>
+            <p className='text-white text-4xl lg:text-5xl md:3xl font-global font-thin '>Capture your <span className='font-global text-4xl lg:text-5xl md:text-3xl drop-shadow-[0_0_3px_rgba(255,255,255,0.8)]'>thoughts, ideas and memories -</span> <br className='hidden lg:block ' /> all in one peaceful space designed to <span className='font-global text-4xl md:text-3xl lg:text-5xl drop-shadow-[0_0_3px_rgba(255,255,255,0.8)]'>help you grow.</span> </p>
+            <p className='text-white font-bold mt-6 text-xl md:text-3xl lg:text-3xl drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]'>Your Journey to <span className='text-3xl lg:text-5xl md:text-5xl font-global font-thin' >{words[index]}</span></p>
+          <div className='flex items-center mt-8 gap-4'>
+            <button onClick={toggleModal} className='px-5 p-2 bg-orange-700 hover:bg-orange-950 duration-300 font-bold text-[11px] text-white tracking-widest rounded-md'> SIGN IN <FontAwesomeIcon icon={faArrowRightToBracket} /></button>
+            <button onClick={toggleModal} className='px-5 p-2 bg-white/20 backdrop-blur-md hover:bg-white/50 duration-300 text-[11px] border-[1px] border-white font-bold text-white tracking-widest rounded-md'>GET STARTED <FontAwesomeIcon icon={faArrowRight} /> </button>
+          </div>  
+          {isModalOpen && <Loginmodal onClose={toggleModal} />}
+
+
          </div>
         </>
     )

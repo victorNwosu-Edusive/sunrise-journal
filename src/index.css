@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 
+@font-face {
+  font-family: 'Instrument_Serif';
+  src: url('../src/assets/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument_Serif_Italic';
+  src: url('../src/assets/fonts/Instrument_Serif/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
 /* Regular */
 @font-face {
   font-family: 'Poppins';

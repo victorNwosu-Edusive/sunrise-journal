@@ -6,11 +6,11 @@ export default {
   ],
   theme: {
     fontFamily:{
-      global:['Poppins'],
+      global:['Instrument_Serif_Italic'],
     },
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('../src/assets/images/journaling-examples.jpg')",
+        'hero-pattern': "url('../src/assets/images/hero-image.png')",
       }
     },
   },
