@@ -88,7 +88,7 @@ const words = [
 
          <div className='rounded-2xl lg:h-screen md:h-auto w-screen p-7 pt-20 lg:pt-20 lg:p-10'>
           <p className='font-global text-center lg:text-5xl mb-7 md:text-4xl text-4xl text-orange-950'>Why Journal?</p>
-          <div className='grid lg:grid-cols-4 md:grid-cols-1 gap-9 p-16 '>
+          <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-9 p-16 '>
 
             <div>
                <div className='bg-orange-300 p-11 absolute rounded-full'></div>
