@@ -6,7 +6,7 @@ import productive from '../assets/images/productive-journal.png';
 import track from '../assets/images/track-journal.png';
 import documenting from '../assets/images/document-journal.png';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/sun-favicon.png';
+import logo from '../assets/images/sunrise-logo-hero.png';
 import { faArrowRight, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faSquareCaretDown } from '@fortawesome/free-solid-svg-icons/faSquareCaretDown';
 
@@ -74,7 +74,11 @@ const words = [
          </div>
          */}
 
-         <div className='rounded-2xl m-2 lg:m-5 h-full lg:h-screen md:h-auto bg-hero-pattern bg-orange-700/40 bg-blend-overlay bg-cover bg-no-repeat bg-center pt-72 lg:pt-44 p-7 lg:p-10'>
+         <div className='rounded-2xl m-2 lg:m-5 h-full lg:h-screen md:h-auto bg-hero-pattern bg-orange-700/40 bg-blend-overlay bg-cover bg-no-repeat bg-center p-7 lg:p-10'>
+         <div className=''>
+          <img src={logo} className='h-10 w-auto' alt="" />
+         </div>
+         <div className='pt-72 lg:pt-44'>
             <p className='text-white text-4xl lg:text-5xl md:3xl font-global font-thin drop-shadow-[0_0_3px_rgba(255,255,255,0.8)] '>Capture your <span className='font-global text-4xl lg:text-5xl md:text-3xl drop-shadow-[0_0_3px_rgba(255,255,255,0.8)]'>thoughts, ideas and memories -</span> <br className='hidden lg:block ' /> all in one peaceful space designed to <span className='font-global text-4xl md:text-3xl lg:text-5xl drop-shadow-[0_0_3px_rgba(255,255,255,0.8)]'>help you grow.</span> </p>
             <p className='text-white font-bold mt-4 text-sm md:text-3xl lg:text-3xl drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]'>Your Journey to <span className='text-2xl lg:text-5xl md:text-5xl font-global font-thin' >{words[index]}</span></p>
           <div className='flex items-center mt-8 gap-4'>
@@ -82,7 +86,7 @@ const words = [
             <button onClick={toggleModal} className='px-5 p-2 bg-white/20 backdrop-blur-md hover:bg-white/50 duration-300 text-[11px] border-[1px] border-white font-bold text-white tracking-widest rounded-md'>GET STARTED <FontAwesomeIcon icon={faArrowRight} /> </button>
           </div>  
           {isModalOpen && <Loginmodal onClose={toggleModal} />}
-
+          </div>
 
          </div>
 
