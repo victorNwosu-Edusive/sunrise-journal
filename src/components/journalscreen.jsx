@@ -6,7 +6,7 @@ import productive from '../assets/images/productive-journal.png';
 import track from '../assets/images/track-journal.png';
 import documenting from '../assets/images/document-journal.png';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/sunrise-logo-hero.png';
+import logo from '../assets/images/sunrise-logo-home.png';
 import { faArrowRight, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faSquareCaretDown } from '@fortawesome/free-solid-svg-icons/faSquareCaretDown';
 
