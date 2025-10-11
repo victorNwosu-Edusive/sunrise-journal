@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
@@ -75,11 +75,11 @@ function Loginmodal({ onClose }) {
             setLoading(false); // Stop loading
         }
     };
-    
+
+       
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-orange-600/25 z-50"
-            onClick={onClose}
+            className="fixed inset-0 flex items-center justify-center bg-white z-50"
         >
             <div
                 className="bg-white p-6 rounded-lg shadow-lg w-96 mx-10"
