@@ -30,9 +30,15 @@ const Login = () => {
         e.preventDefault();
         setLoading(true); // Start loading
         setError(''); // Clear previous errors
-    
-        if (password.length < 6) {
+
+        if (password.length > 1 && password.length < 6) {
             setError('Password must be at least 6 characters long.');
+            setLoading(false);
+            return;
+        }
+
+        if (password == "") {
+            setError('Username and Password is required.');
             setLoading(false);
             return;
         }
@@ -107,7 +113,21 @@ const Login = () => {
         <form onSubmit={handleAuth} className='flex-col flex gap-5 w-full lg:w-auto items-center'>
         <div className='px-4 overflow-hidden bg-orange-100 duration-200 outline-none  focus:border-orange-400 w-full   border-orange-700 rounded-full flex items-center justify-center gap-4'> <FontAwesomeIcon icon={faUserCircle} className='text-orange-700' /> <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className='bg-transparent placeholder-orange-700/35 w-full p-3 text-sm outline-none '  placeholder='Username' /></div>
         <div className='px-4 overflow-hidden bg-orange-100 duration-200 outline-none  focus:border-orange-400 w-full text-sm border-orange-700 rounded-full flex items-center justify-center gap-4'> <FontAwesomeIcon icon={faLock} className='text-orange-700' /> <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='bg-transparent placeholder-orange-700/35 w-full p-3 text-sm outline-none '  placeholder='Password' /></div>
-        <button type="submit" className='bg-orange-700 hover:bg-orange-950  p-3 w-full font-bold text-[13px] text-white tracking-widest rounded-full duration-300'>LOGIN</button>
+        {error && <p className="text-red-500 text-[11px]">{error}</p>}
+        <button type="submit" className='bg-orange-700 hover:bg-orange-950 flex items-center justify-center  p-3 w-full font-bold text-[13px] text-white tracking-widest rounded-full duration-300'>
+           {loading ? (
+          <div class="p-1 flex flex-row gap-2">
+  <div class="w-3 h-3 rounded-full bg-white animate-bounce"></div>
+  <div
+    class="w-3 h-3 rounded-full bg-white animate-bounce [animation-delay:-.3s]"
+  ></div>
+  <div
+    class="w-3 h-3 rounded-full bg-white animate-bounce [animation-delay:-.5s]"
+  ></div>
+</div>
+) : (isSignUp ? "LOGIN" : "LOGIN")}
+          
+          </button>
         <p className='text-sm'>Don't have an account? <a href="" className='text-orange-700'>Sign up</a></p>
         </form>
     </div>
