@@ -132,14 +132,17 @@ function savedJournal() {
                             <ul>
                                 {journals.map((journal, index) => (
                                     <li key={index} className="mb-4 cursor-pointer">
-                                        <div className="p-4 bg-orange-100 rounded-md">
-                                        <p className='p-1 ml-auto flex px-2 rounded-xl  w-fit font-bold text-[10px] text-orange-300 border-orange-300 border-[2px] bg-orange-200/40'>{formatDate(journal.date)}</p>
-                                            <p className='font-bold mb-1'>{journal.title}</p>
+                                        <div>
+                                                                 
+                                            <div className='relative bg-orange-50/75 items-center justify-center border-[1px] border-slate-100 p-6 rounded-2xl backdrop-blur-md '>
+                                            <p className='p-1 ml-auto flex px-2 mb-5 rounded-xl  w-fit font-bold text-[10px] text-orange-300 border-orange-300 border-[1px] bg-orange-200/20'>{formatDate(journal.date)}</p>
+                                            <p className='font-bold text-[16px] mb-3'>{journal.title}</p>
                                             <p className='text-[14px]'>{journal.content}</p>
                                             <div className="mt-3 flex gap-2 items-end justify-end">
                                             <FontAwesomeIcon icon={faEdit} className='flex text-white bg-orange-300 p-2 rounded-md hover:bg-black duration-300' />
                                             <FontAwesomeIcon icon={faBoxArchive} onClick={() => handleArchive(journal.id)} className='flex text-white bg-orange-300 p-2 rounded-md hover:bg-black duration-300' />
                                             </div>
+                                        </div>
                                         </div>
                                     </li>
                                 ))}

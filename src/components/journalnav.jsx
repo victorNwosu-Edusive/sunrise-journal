@@ -99,7 +99,11 @@ function Journalnav() {
                <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faPlusCircle} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>New Journal</p> </button>
                <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faJournalWhills} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>My Journals</p> </button>
                <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faUserCircle} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>You</p> </button>
+            
             </nav>
+            <NavLink onClick={handleLogout} className="absolute top-0 text-white text-sm bg-orange-600/55 hover:bg-orange-600/45 p-2 hover:shadow-orange-400/60 duration-300 rounded-md font-bold w-full flex gap-4 items-center justify-center">
+                                Logout
+                            </NavLink>
 
             {/* Mobile Menu Extended: On-click */}
             <nav className={`${isOpen ? "left-0" : "-left-full"} h-screen fixed z-50 duration-300 lg:w-1/5 bg-orange-100 p-7 lg:flex flex-col border-r-2 border-r-orange-950/25`}>
