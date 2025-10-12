@@ -94,7 +94,7 @@ function Journalnav() {
             </nav>
 
             {/* Mobile Menu */}
-            <nav className="fixed bottom-0 z-40 rounded-t-3xl w-full md:w-full lg:hidden bg-white/65 backdrop-blur-md p-1 flex flex-wrap justify-evenly items-center">
+            <nav className="fixed bottom-0 z-40 rounded-t-3xl w-full md:w-full lg:hidden bg-white/80 backdrop-blur-md p-1 flex flex-wrap justify-evenly items-center">
                <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faHome} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>Home</p> </button>
                <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faPlusCircle} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>New Journal</p> </button>
                <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faJournalWhills} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>My Journals</p> </button>
