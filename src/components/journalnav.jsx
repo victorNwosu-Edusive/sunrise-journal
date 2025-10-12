@@ -95,10 +95,10 @@ function Journalnav() {
 
             {/* Mobile Menu */}
             <nav className="fixed bottom-0 z-40 rounded-t-3xl w-full md:w-full md:hidden lg:hidden bg-white/80 backdrop-blur-md p-1 grid grid-cols-4 justify-evenly items-center">
-               <button className='p-2 hover:bg-orange-400/25 rounded-lg w-full'> <FontAwesomeIcon icon={faHome} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>Home</p> </button>
-               <button className='p-2 hover:bg-orange-400/25 rounded-lg w-full'> <FontAwesomeIcon icon={faPlusCircle} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>New Journal</p> </button>
-               <button className='p-2 hover:bg-orange-400/25 rounded-lg w-full'> <FontAwesomeIcon icon={faJournalWhills} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>My Journals</p> </button>
-               <button className='p-2 hover:bg-orange-400/25 rounded-lg w-full'> <FontAwesomeIcon icon={faUserCircle} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>You</p> </button>
+               <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faHome} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>Home</p> </button>
+               <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faPlusCircle} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>New Journal</p> </button>
+               <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faJournalWhills} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>My Journals</p> </button>
+               <button className='p-2 hover:bg-orange-300/25 rounded-lg w-full'> <FontAwesomeIcon icon={faUserCircle} className="text-orange-700 text-xl" /> <p className='text-[9px] text-orange-700'>You</p> </button>
             </nav>
 
             {/* Mobile Menu Extended: On-click */}
