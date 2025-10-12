@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Loginmodal from './loginmodal';
 import Think from '../assets/images/why-journal.png';
 import productive from '../assets/images/productive-journal.png';
 import track from '../assets/images/track-journal.png';
@@ -33,13 +32,6 @@ const words = [
     return () => clearInterval(interval);
   }, [words.length]);
 
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    // Function to toggle modal visibility
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
 
     const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -103,9 +95,8 @@ const words = [
             <p className='text-white font-bold mt-4 text-sm md:text-3xl lg:text-3xl drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]'>Your Journey to <span className='text-2xl lg:text-5xl md:text-5xl font-global font-thin' >{words[index]}</span></p>
           <div className='flex items-center mt-8 gap-4'>
             <button onClick={handleLogin} className='px-5 p-2 bg-orange-700 hover:bg-orange-950 duration-300 font-bold text-[11px] text-white tracking-widest rounded-md'> SIGN IN <FontAwesomeIcon icon={faArrowRightToBracket} /></button>
-            <button onClick={toggleModal} className='px-5 p-2 bg-white/20 backdrop-blur-md hover:bg-white/50 duration-300 text-[11px] border-[1px] border-white font-bold text-white tracking-widest rounded-md'>GET STARTED <FontAwesomeIcon icon={faArrowRight} /> </button>
+            <button onClick={handleLogin} className='px-5 p-2 bg-white/20 backdrop-blur-md hover:bg-white/50 duration-300 text-[11px] border-[1px] border-white font-bold text-white tracking-widest rounded-md'>GET STARTED <FontAwesomeIcon icon={faArrowRight} /> </button>
           </div>  
-          {isModalOpen && <Loginmodal onClose={toggleModal} />}
           </div>
 
          </div>
