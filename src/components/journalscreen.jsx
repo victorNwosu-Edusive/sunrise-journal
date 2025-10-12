@@ -5,7 +5,7 @@ import productive from '../assets/images/productive-journal.png';
 import track from '../assets/images/track-journal.png';
 import documenting from '../assets/images/document-journal.png';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/images/sunrise-logo-home.png';
+import logo from '../assets/images/sunrise-logs.png';
 import { faArrowRight, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import Loading from './loading';
 import { faSquareCaretDown } from '@fortawesome/free-solid-svg-icons/faSquareCaretDown';
