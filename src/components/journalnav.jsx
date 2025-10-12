@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArchive, faPlus, faRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faArchive, faBookJournalWhills, faPlus, faRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faHeart, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { Outlet, NavLink } from 'react-router-dom';
 import logo from '../assets/images/sun-favicon.png';
 import Loginmodal from './loginmodal';
 import { auth } from '../firebase'; // Import Firebase authentication
 import { signOut } from 'firebase/auth'; // Firebase signOut function
 import '../App.css';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { faJournalWhills } from '@fortawesome/free-solid-svg-icons/faJournalWhills';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 
 function Journalnav() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -91,19 +94,11 @@ function Journalnav() {
             </nav>
 
             {/* Mobile Menu */}
-            <nav className="h-auto fixed z-40 w-full md:w-full lg:hidden bg-orange-100 p-4 flex flex-wrap justify-between items-center">
-                <div className="flex">
-                    <img src={logo} alt="" className="h-8 w-8" />
-                    <p className="text-[12px] font-bold text-orange-950 leading-3 pt-1">Sunrise <br />Journal</p>
-                </div>
-
-                <div>
-                    <button className="text-white block md:block lg:hidden duration-300 focus:outline-none relative scale-x-[-1] w-6 h-6" onClick={toggleMenu}>
-                        <span className={`block absolute w-6 h-0.5 bg-orange-950 transition-all duration-300 -translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : '-translate-y-1.5'}`}></span>
-                        <span className={`block absolute w-4 h-0.5 bg-orange-950 duration-300 ${isOpen ? 'bg-orange-950 transition-all' : 'w-7 transition-transform'}`}></span>
-                        <span className={`block absolute w-6 h-0.5 bg-black transition-all duration-300 translate-y-1.5 ${isOpen ? 'bg-orange-950 transition-all' : 'translate-y-1.5'}`}></span>
-                    </button>
-                </div>
+            <nav className="fixed bottom-0 z-40 rounded-t-3xl w-full md:w-full lg:hidden bg-white/65 backdrop-blur-md p-1 flex flex-wrap justify-evenly items-center">
+               <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faHome} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>Home</p> </button>
+               <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faPlusCircle} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>New Journal</p> </button>
+               <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faJournalWhills} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>My Journals</p> </button>
+                <button className='p-2 hover:bg-orange-400/25 rounded-lg'> <FontAwesomeIcon icon={faUserCircle} className="text-amber-600 text-xl" /> <p className='text-[9px] text-amber-600'>You</p> </button>
             </nav>
 
             {/* Mobile Menu Extended: On-click */}

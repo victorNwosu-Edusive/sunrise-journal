@@ -122,7 +122,7 @@ function savedJournal() {
                         </div>
                     ) : (
                         <div>
-                            <h2 className="text-xl font-medium mb-1">Your Saved Journals</h2>
+                            <h2 className="text-xl font-medium mb-1">Your journals</h2>
                             <button
                                 onClick={handleAddJournal}
                                 className="my-4 border-solid border-[2px] border-orange-600/50 text-orange-600/50 font-medium text-[11px] p-1 px-4 rounded-md"
